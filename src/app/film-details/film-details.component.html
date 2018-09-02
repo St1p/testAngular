@@ -1,0 +1,71 @@
+
+<div class="film-detail-wrapper">
+  <!--<div *ngIf="tmp.title">{{tmp.title}}</div>-->
+  <div class="film-detail-background" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original/' + _filmDetail.backdrop_path + ') '}">
+    <div class="container ">
+
+      <div  class="row film-detail-block"  >
+        <div class="col-4">
+          <div class="film-entity-img">
+            <img src="https://image.tmdb.org/t/p/w300/{{_filmDetail.poster_path}}" alt="">
+          </div>
+        </div>
+        <div class="col-8 film-detail-content">
+
+          <div class="film-detail-title">
+            <h2>{{_filmDetail.title}}</h2>
+          </div>
+
+          <div class="film-detail-overview">
+            {{_filmDetail.overview}}
+          </div>
+
+          <div class="film-detail-popular-actor-list">
+            <div  class="film-detail-list-title"  >
+                <h2>Top Billed Cast</h2>
+            </div>
+            <div  class="row "  >
+              <div class="col-3 film-detail-popular-actor-block"  *ngFor="let actor  of _topActorsList">
+
+                  <div class="film-detail-popular-actor-header">
+                      <h2>{{actor.name}}</h2>
+                  </div>
+                  <div class="film-detail-popular-actor-img">
+                    <img src="https://image.tmdb.org/t/p/w92/{{actor.profile_path}}" alt="">
+                  </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 film-detail-popular-actor-list-footer ">
+                  <button  mat-button (click)="toggleActorList()" >Full Cast</button>
+                  <!--<button mat-button  (click)="showFilmDetails(film.id)">More Info</button>-->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div >
+
+    </div>
+  </div>
+
+  <div class="container film-detail-actor-list-wrap" *ngIf="_showActorList">
+
+    <div  class="film-detail-list-title"  >
+      <h2>Actor-List: </h2>
+    </div>
+  <div  class="row  film-detail-actor-list"  >
+    <div class="col-3 "  *ngFor="let actor  of _actorsList">
+
+      <div class="film-detail-popular-actor-header">
+        <h2>{{actor.name}}</h2>
+      </div>
+      <div class="film-detail-popular-actor-img">
+        <img src="https://image.tmdb.org/t/p/w92/{{actor.profile_path}}" alt="">
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+

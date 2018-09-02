@@ -1,0 +1,29 @@
+.main-wrapper {
+    background-color: #f4f4f4;;
+}
+.film-entity-header {
+    text-align: center;
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.film-entity {
+    margin: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 0 0 48%;
+    background: white;
+}
+
+.film-entity-footer {
+    text-align: right;
+    padding: 10px;
+}
+.film-list-pagination {
+    margin-top: 20px;
+}
+.film-list-pagination  .page-item{
+    padding: 0 10px;
+  }
+.film-entity-header,.film-entity-body,.film-entity-footer {
+
+}
